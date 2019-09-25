@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+        <ui:composition template="./WEB-INF/footer_template.xhtml">
+
+            <ui:define name="content">      
+                <h:outputStylesheet library="css" name="style.css"/>  
+                <br/>
+                <h:form>
+                    <br/>
+                    <p:dataTable value="#{RanklistController.myWeekly}" var="game" rowIndexVar="index">
+                        <p:column headerText="Blue">
+                            <center><h:outputText value="#{game.bluePlayer}"/></center>
+                        </p:column>
+                        <p:column headerText="Red">
+                            <center><h:outputText value="#{game.redPlayer}"/></center>
+                        </p:column>
+                        <p:column headerText="Points Blue">
+                            <center><h:outputText value="#{game.bluePoints}"/></center>
+                        </p:column>
+                        <p:column headerText="Points Red">
+                            <center><h:outputText value="#{game.redPoints}"/></center>
+                        </p:column>
+                        <p:column headerText="Date">
+                            <center><h:outputText value="#{game.gameDate}"/></center>
+                        </p:column>
+                        <p:column headerText="Result">
+                            <center><h:outputText value="#{RanklistController.result(game)}"/></center>
+                        </p:column>
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>

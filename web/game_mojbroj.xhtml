@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+        <h:panelGroup class="mojbroj" rendered="#{GameController.isMyPage('MojBroj')}">
+
+            <h:form id="mojbroj" class="menuButtons">
+                <div>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.numbers(0)}"
+                                     action="#{MojBrojController.pickNumber(0)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(0)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.numbers(1)}"
+                                     action="#{MojBrojController.pickNumber(1)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(1)}"
+                                     update="mojbroj"
+                                     id="b1"/>
+                    <p:commandButton class="mojbrojButton" 
+                                     value="#{MojBrojController.numbers(2)}"
+                                     action="#{MojBrojController.pickNumber(2)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(2)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton" 
+                                     value="#{MojBrojController.numbers(3)}"
+                                     action="#{MojBrojController.pickNumber(3)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(3)}"
+                                     update="mojbroj"
+                                     style="margin-right: 4%"/>
+                    <p:commandButton class="mojbrojButton2" 
+                                     value="#{MojBrojController.numbers(4)}"
+                                     action="#{MojBrojController.pickNumber(4)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(4)}"
+                                     update="mojbroj"
+                                     style="margin-right: 4%"/>
+                    <p:commandButton class="mojbrojButton2" 
+                                     value="#{MojBrojController.numbers(5)}"
+                                     action="#{MojBrojController.pickNumber(5)}"
+                                     disabled="#{!MojBrojController.isButtonAvailable(5)}"
+                                     update="mojbroj"
+                                     style="margin-right: 10%"/>
+                    <p:commandButton class="mojbrojButton3" 
+                                     value="#{MojBrojController.numbers(6)}"
+                                     update="mojbroj"
+                                     style="margin-right: 4%"/>
+                    <p:commandButton value="STOP"
+                                     action="#{MojBrojController.chooseNumber()}"
+                                     disabled="#{MojBrojController.allChosen}"
+                                     update="mojbroj"
+                                     style="margin-top: 4%"/>
+                </div>
+                <br/>
+                <div style="margin-top: 2%; margin-bottom: 2%">
+                    <p:commandButton class="mojbrojButton" 
+                                     value="#{MojBrojController.getOperation(0)}"
+                                     action="#{MojBrojController.pickOperator(0)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.getOperation(1)}"
+                                     action="#{MojBrojController.pickOperator(1)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.getOperation(2)}"
+                                     action="#{MojBrojController.pickOperator(2)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.getOperation(3)}"
+                                     action="#{MojBrojController.pickOperator(3)}"
+                                     update="mojbroj"
+                                     style="margin-right: 2%"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.getOperation(4)}"
+                                     action="#{MojBrojController.pickBracket(4)}"
+                                     update="mojbroj"/>
+                    <p:commandButton class="mojbrojButton"
+                                     value="#{MojBrojController.getOperation(5)}"
+                                     action="#{MojBrojController.pickBracket(5)}"
+                                     update="mojbroj"/>
+                </div>
+                <br/>
+                <h:outputText value="#{MojBrojController.mojBrojWord}" 
+                              style="color: #fff; opacity: 0.85; font-size: 30px; margin-bottom: 2%"/>
+                <br/>
+                <p:commandButton class="colored05" value="Reset" action="#{MojBrojController.reset()}" update="mojbroj"/>
+                <p:commandButton class="colored05" value="Submit" action="#{GameController.finished()}" update="games timer"/>
+            </h:form>
+            <h:form rendered="#{MojBrojController.isNumberChosing()}">
+                <p:poll interval="1" listener="#{MojBrojController.update()}" update="mojbroj timer"/>
+            </h:form>
+
+        </h:panelGroup>
+
+
+
+    </h:body>
+</html>
+

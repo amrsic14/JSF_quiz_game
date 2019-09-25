@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+        <h:panelGroup class="geografija" rendered="#{GameController.isMyPage('ZanimljivaGeografija')}">
+
+            <h:form id="geografijaa" class="menuButtons">
+                <h:outputText value="Slovo - #{ZanimljivaGeografijaController.startLetter}" 
+                              style="color: #fff; opacity: 0.85; font-size: 22px;"/><br/>
+
+                <p:inputText  value="#{ZanimljivaGeografijaController.drzava}" autocomplete="false" placeholder="Drzava"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.grad}" autocomplete="false" placeholder="Grad"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.jezero}" autocomplete="false" placeholder="Jezero"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.planina}" autocomplete="false" placeholder="Planina"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.reka}" autocomplete="false" placeholder="Reka"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.zivotinja}" autocomplete="false" placeholder="Zivotinja"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.biljka}" autocomplete="false" placeholder="Biljka"/>
+                <br/>
+                <p:inputText  value="#{ZanimljivaGeografijaController.muzickaGrupa}" autocomplete="false" placeholder="Muzicka grupa"/><br/>
+                <p:commandButton class="colored05" 
+                                 value="Submit" 
+                                 action="#{ZanimljivaGeografijaController.sendToSupervisor()}" 
+                                 disabled="#{ZanimljivaGeografijaController.isSentToSupervisor()}" 
+                                 update="games timer"/>
+                <br/>
+
+                <p:poll interval="1" 
+                        listener="#{ZanimljivaGeografijaController.checkAnswers()}"
+                        rendered="#{ZanimljivaGeografijaController.isSentToSupervisor()}"
+                        update="geografijaa"/>
+
+                <h:outputText value="#{ZanimljivaGeografijaController.message}" style="color: aliceblue;"/>
+            </h:form>
+        </h:panelGroup>
+    </h:body>
+</html>
+

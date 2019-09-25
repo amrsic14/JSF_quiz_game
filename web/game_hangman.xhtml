@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+
+        <h:panelGroup class="hangman" rendered="#{GameController.isMyPage('Hangman')}">
+
+            <h:form id="hangmanForm" class="menuButtons">
+                <center>
+                    <ui:repeat var="letter" value="#{HangmanController.chars}" varStatus="metadata">
+                        <p:commandButton class="hangmanButton"
+                                         disabled="#{HangmanController.isDisabled(metadata.index)}"
+                                         value="#{letter}"
+                                         action="#{HangmanController.chooseLetter(letter, metadata.index)}"
+                                         update="hangmanForm"/>
+                        <h:panelGroup rendered="#{letter eq 'K'}">
+                            <br/>
+                        </h:panelGroup>
+                    </ui:repeat>
+                </center>
+
+                <center>
+                    <h:graphicImage value="resources/images/hangman#{HangmanController.getImageIndex()}.png"/>
+                </center>
+
+                
+                <center>
+                    <ui:repeat var="letter" value="#{HangmanController.hangmanChars}" varStatus="metadata">
+                        <p:commandButton class="#{HangmanController.getButtonClass(metadata.index)}"
+                                         disabled="true"
+                                         value="#{HangmanController.getLetter(metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                
+            </h:form>
+
+        </h:panelGroup>
+
+    </h:body>
+</html>
+

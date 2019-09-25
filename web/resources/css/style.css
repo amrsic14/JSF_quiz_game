@@ -1,0 +1,639 @@
+body 
+{
+    background-color: #b3b8ba;
+    background-image: url(#{request.contextPath}/resources/images/background.jpg);
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+html 
+{
+    position: relative;
+    min-height: 100%;
+}
+
+footer 
+{
+    background: transparent;
+    color: #fff;
+    opacity: 0.85;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 10px;
+    font-family: sans-serif
+}
+
+header 
+{
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 35px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.input-form-login
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 400px;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.notSupported
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: rgba(255,255,255,0.85);
+    padding: 60px 40px;
+    font-size: 24px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.timerr
+{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 91px;
+    height: 91px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    background-image: url(#{request.contextPath}/resources/images/clock.png);
+    background-size: cover;
+}
+
+.supervisor-anagram
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.anagram
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.gameover
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.mojbroj
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.hangman
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /*width: 540px;*/
+    padding: 40px 40px 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.geografija
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.pehar
+{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.supervisor-hangman
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 60px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+.supervisor-geografija
+{
+
+}
+
+.supervisor-pehar
+{
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.admin-input
+{
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    transform: translate(-50%,-50%);
+    width: 850px;
+    height: 400px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.password-change
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    height: 150px;
+    padding: 25px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.input-form-register
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 580px;
+    height: 400px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.input-form-login input[type="text"],
+.supervisor-anagram input[type="text"],
+.supervisor-hangman input[type="text"],
+.password-change input[type="text"],
+.input-form-login input[type="password"],
+.password-change input[type="password"]
+{
+    width: 240px;
+    margin-bottom: 10px;
+    background: transparent;
+    outline: none;
+    height: 22px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.geografija input[type="text"]
+{
+    width: 230px;
+    margin-bottom: 10px;
+    background: transparent;
+    outline: none;
+    height: 22px;
+    color: #fff;
+    font-size: 12px;
+}
+
+
+.pehar input[type="text"]
+{
+    width: 120px;
+    margin-bottom: 10px;
+    background: transparent;
+    outline: none;
+    height: 22px;
+    color: #fff !important;
+    opacity: 0.85;
+    font-size: 12px;
+}
+
+.supervisor-pehar input[type="text"]
+{
+    width: 120px;
+    height: 20px;
+    margin-bottom: 1px;
+    background: transparent;
+    outline: none;
+    height: 22px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.input-form-register input[type="text"],
+.input-form-register input[type="password"]
+{
+    width: 240px;
+    margin-bottom: 10px;
+    background: transparent;
+    outline: none;
+    height: 22px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.input-form-login input[type="text"]::placeholder,
+.pehar input[type="text"]::placeholder,
+.input-form-login input[type="password"]::placeholder
+{
+    color: #fff;
+    opacity: 0.85;
+}
+
+.input-form-register input[type="text"]::placeholder,
+.input-form-register input[type="password"]::placeholder
+{
+    color: #fff;
+    opacity: 0.85;
+}
+
+
+.index-menu {
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    border-radius: 50%;
+    top: -8.25%;
+    left: 0.25%;
+}
+
+.main-menu
+{
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 488px;
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.main-menu-userData
+{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 100px;
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    border-radius: 25px;
+}
+
+.ui-button {
+    background:transparent !important;
+    color: #fff !important;
+    opacity: 0.85 !important;
+    width: 120px;
+    height: 30px;
+    font-size:15px;
+    /*font-size:15px !important;*/
+    font-weight: normal !important;
+    margin-bottom: 10px;
+}
+
+.menuButtons .ui-button {
+    background:transparent !important; 
+    color: #fff !important;
+    opacity: 0.85 !important;
+    width: 240px;
+    height: 40px;
+    font-size:15px !important;
+    font-weight: normal !important;
+    margin-bottom: 4px;
+}
+
+.menuButtons .ui-button:disabled {
+    background:transparent !important;
+    color: rgba(0,0,0,.3);
+    border-color: rgba(0,0,0,.3);
+}
+
+.ui-fileupload {
+    background:transparent !important;
+    color: #fff !important;
+    opacity: 0.85 !important;
+    width: 120px;
+    height: 30px;
+    font-size:15px !important;
+    font-weight: normal !important;
+    margin-bottom: 10px;
+}
+
+
+.ui-selectonemenu {
+    width: 227px !important;
+    color: #fff !important;
+    background: rgba(0,0,0,0) !important;
+    margin-bottom: 10px;
+}
+
+.ui-selectoneradio {
+    color: #fff;
+    opacity: 0.85;
+    size: 15px;
+    margin-bottom: 10px;
+}
+
+.ui-widget-content a
+{
+    color: #fff !important;
+    opacity: 0.85 !important;
+    font-size:15px !important;
+}
+
+.ui-datatable tbody td, .ui-datatable tfoot td
+{
+    border: 0px;
+    padding: 1px;
+    margin: 0px;
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.ui-datatable thead th, .ui-datatable tfoot th
+{
+    border: 0px;
+    padding: 1px;
+    margin: 0px;
+    background-color: rgba(0,0,0,1);
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.ui-datatable tbody.ui-datatable-data
+{
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.ui-panelmenu-submenu
+{
+    background: transparent;
+}
+
+.ui-widget-header {
+    background: #80ff80; 
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0px;
+}
+
+.ui-widget tbody tr
+{
+    background-color: rgba(0, 0, 0, 0);
+    color: aliceblue;
+}
+
+.ui-tabmenu .ui-tabmenu-nav
+{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menuButtons .colored05
+{
+    background-color: rgba(0,0,0,.5) !important;
+}
+
+.menuButtons .colored06
+{
+    background-color: rgba(0,0,0,.5) !important;
+    width: 140px;
+    height: 30px;
+}
+
+.menuButtons .anagramButton
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+}
+
+.menuButtons .mojbrojButton
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+}
+
+.menuButtons .mojbrojButton2
+{
+    width: 50px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+}
+
+.menuButtons .mojbrojButton3
+{
+    width: 60px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+}
+
+.menuButtons .peharButton
+{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.menuButtons .peharButtonRed
+{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 5, 5, 0.3) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.menuButtons .peharButtonBlue
+{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(13, 5, 255, 0.3) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.menuButtons .hangmanButton
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.menuButtons .hangmanButtonNotOpen
+{
+    width: 40px;
+    height: 40px;
+    color:  rgba(0,0,0,.1) !important;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.menuButtons .hangmanButtonNotOpen:disabled
+{
+    width: 40px;
+    height: 40px;
+    color: rgba(0,0,0,0) !important;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-decoration:none;
+    text-shadow:0px 0px 0px;
+    font-size: 0;
+}
+
+.menuButtons .hangmanButton1:disabled
+{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,.5) !important;
+    align-content: center;
+    padding: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.menuButtons .hangmanButtonNone
+{
+    -moz-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+    -webkit-box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+    box-shadow:inset 0px 0px 0px 0px #c1ed9c;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0) !important;
+    border: none;
+    align-content: center;
+    /*padding: 0px;*/
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 6px;
+}
+
+.ui-panelgrid .ui-panelgrid-cell
+{
+    background-color: #80ff80;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.ui-widget-content {
+    color: aliceblue;
+    border: #80ff80;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.ui-datepicker-calendar tbody tr td a {
+    color: #fff !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    font-size: 14px;
+}
+
+.colored td{ 
+    background-color: rgba(13, 5, 255, 0.3) !important;
+}

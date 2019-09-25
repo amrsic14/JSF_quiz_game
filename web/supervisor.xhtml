@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./WEB-INF/footer_template.xhtml">
+
+            <ui:define name="content">
+                <h:outputStylesheet library="css" name="style.css"/>
+
+                <center>
+                    <h:form class="menuButtons">
+                        <p:commandButton class="colored05" value="Anagram" action="#{SupervisorController.setActiveTab(0)}" update="supervisroForms"/>
+                        <p:commandButton class="colored05" value="Hangman" action="#{SupervisorController.setActiveTab(1)}" update="supervisroForms"/>
+                        <p:commandButton class="colored05" value="Zanimljiva geografija" action="#{SupervisorController.setActiveTab(2)}" update="supervisroForms"/>
+                        <p:commandButton class="colored05" value="Pehar" action="#{SupervisorController.setActiveTab(3)}" update="supervisroForms"/>
+                    </h:form>
+                </center>
+
+                <p:outputPanel id="supervisroForms">
+                    <h:panelGroup styleClass="#{SupervisorController.getStyleClass()}">
+
+
+                        <!--Anagram-->
+                        <h:form rendered="#{SupervisorController.canShowTab(0)}">
+                            <h:outputText value="Input data for game Anagram" style="color: #fff; opacity: 0.85;"/>
+                            <h:panelGrid columns="1">
+                                <p:inputText placeholder="Word/Sentence:" value="#{SupervisorController.anagramRec}"
+                                             required="true" requiredMessage="Input word/sentence"
+                                             autocomplete="false"
+                                             style="margin-top: 4%;"/>
+                                <p:inputText placeholder="Solution:" 
+                                             value="#{SupervisorController.anagramResenje}" 
+                                             required="true" requiredMessage="Input solution"
+                                             autocomplete="false"/>
+                                <p:commandButton value="Submit" action="#{SupervisorController.submitAnagram()}" update="supervisroForms"/>
+                            </h:panelGrid>
+                        </h:form>
+
+
+                        <!--Hangman-->
+                        <h:form rendered="#{SupervisorController.canShowTab(1)}"> 
+                            <h:outputText value="Input data for game Hangman" style="color: #fff; opacity: 0.85;"/>
+                            <h:panelGrid columns="1">
+                                <p:inputText placeholder="Word/Sentence:" value="#{SupervisorController.hangmanWord}"
+                                             required="true" requiredMessage="Input word/sentence"
+                                             autocomplete="false"
+                                             style="margin-top: 4%;"/>
+                                <p:commandButton value="Submit" action="#{SupervisorController.submitHangman()}" update="supervisroForms"/>
+                            </h:panelGrid>
+                        </h:form>
+
+
+
+                        <!--Zanimljiva geografija-->
+                        <h:form id="geografijaForm" class="menuButtons" rendered="#{SupervisorController.canShowTab(2)}"> 
+                            <p:poll interval="1" listener="#{SupervisorController.refresh()}" update="geografijaForm"/>
+                            <p:dataTable value="#{SupervisorController.requests}" var="req">
+                                <p:column headerText="Zahtev">
+                                    <h:outputText value="#{req.odgovor}"/>
+                                </p:column>
+
+                                <p:column>
+                                    <p:commandButton value="True" action="#{SupervisorController.acceptGeografija(req)}" update="geografijaForm"/>
+                                </p:column>
+
+                                <p:column>
+                                    <p:commandButton value="False" action="#{SupervisorController.refuseGeografija(req)}" update="geografijaForm"/>
+                                </p:column>
+                            </p:dataTable>
+                        </h:form>
+
+
+
+                        <!--Pehar-->
+                        <h:form rendered="#{SupervisorController.canShowTab(3)}"> 
+                            <h:outputText value="Input data for game Pehar" style="color: #fff; opacity: 0.85;"/>
+                            <h:panelGrid columns="2">
+                                <p:column>
+                                    <p:inputText placeholder="Question 1:" value="#{SupervisorController.peharQuestion1}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 2:" value="#{SupervisorController.peharQuestion2}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 3:" value="#{SupervisorController.peharQuestion3}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 4:" value="#{SupervisorController.peharQuestion4}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 5:" value="#{SupervisorController.peharQuestion5}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 6:" value="#{SupervisorController.peharQuestion6}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 7:" value="#{SupervisorController.peharQuestion7}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 8:" value="#{SupervisorController.peharQuestion8}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 9:" value="#{SupervisorController.peharQuestion9}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 10:" value="#{SupervisorController.peharQuestion10}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 11:" value="#{SupervisorController.peharQuestion11}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 12:" value="#{SupervisorController.peharQuestion12}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                    <p:inputText placeholder="Question 13:" value="#{SupervisorController.peharQuestion13}"
+                                                 required="true" requiredMessage="Input question" autocomplete="false"/>
+                                </p:column>
+                                <p:column>
+                                    <p:inputText placeholder="Answer 1:" value="#{SupervisorController.peharAnswer1}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="9" maximum="9" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 2:" value="#{SupervisorController.peharAnswer2}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="8" maximum="8" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 3:" value="#{SupervisorController.peharAnswer3}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="7" maximum="7" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 4:" value="#{SupervisorController.peharAnswer4}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="6" maximum="6" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 5:" value="#{SupervisorController.peharAnswer5}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="5" maximum="5" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 6:" value="#{SupervisorController.peharAnswer6}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="4" maximum="4" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 7:" value="#{SupervisorController.peharAnswer7}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="3" maximum="3" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 8:" value="#{SupervisorController.peharAnswer8}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="4" maximum="4" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 9:" value="#{SupervisorController.peharAnswer9}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="5" maximum="5" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 10:" value="#{SupervisorController.peharAnswer10}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="6" maximum="6" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 11:" value="#{SupervisorController.peharAnswer11}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="7" maximum="7" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 12:" value="#{SupervisorController.peharAnswer12}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="8" maximum="8" />
+                                    </p:inputText>
+                                    <p:inputText placeholder="Answer 13:" value="#{SupervisorController.peharAnswer13}"
+                                                 required="true" requiredMessage="Input word/sentence" autocomplete="false">
+                                        <f:validateLength minimum="9" maximum="9" />
+                                    </p:inputText>
+                                </p:column>
+                            </h:panelGrid>
+                            <center>
+                                <p:commandButton value="Submit" action="#{SupervisorController.submitPehar()}" update="supervisroForms"/>
+                            </center>
+                            <h:outputText value="#{SupervisorController.message}" style="color: rgba(255,0,0,0.9);"/>
+                        </h:form>
+
+                    </h:panelGroup>
+                </p:outputPanel>
+
+            </ui:define>
+
+        </ui:composition>
+    </body>
+</html>

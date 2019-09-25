@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./WEB-INF/footer_template.xhtml">
+
+            <ui:define name="content">
+                <h:outputStylesheet library="css" name="style.css"/>
+
+                <h:form>
+
+                    <h:panelGroup class="main-menu">
+                        <center  style="margin-bottom: 3%;">
+                            <h:panelGrid columns="2">
+                                <h:column>
+                                    <h:graphicImage style="opacity: 0.8" alt="User Image" width="100px" height="100px" url="#{GameMenuController.imageName}"/>
+                                </h:column>
+                                <h:column>
+                                    <center>
+                                        <h:outputText value="   Wellcome" 
+                                                      style="color: #fff; opacity: 0.85; font-size: 30px;"/>
+                                        <br/>
+                                        <h:outputText value="      #{GameMenuController.username}"
+                                                      style="color: #fff; opacity: 0.85; font-size: 30px;"/>
+                                    </center>
+                                </h:column>
+                            </h:panelGrid>
+                        </center>
+
+                        <center>
+                            <p:panelGrid class="menuButtons" columns="1">
+                                <p:commandButton value="New Game"  disabled="#{GameMenuController.guest}"
+                                                 action="#{GameMenuController.hostGame()}"/>
+                                <p:commandButton value="Join Game" disabled="#{GameMenuController.guest}"
+                                                 action="#{GameMenuController.loadGames()}"/>
+                                <p:commandButton value="Singleplayer game"  disabled="#{GameMenuController.guest}" 
+                                                 action="#{GameMenuController.startGameOfTheDay()}" update="errorMessage"/>
+                                <p:commandButton value="My Games" disabled="#{GameMenuController.guest}"
+                                                 action="#{GameMenuController.loadMyGames()}"/>
+                                <p:commandButton value="Singleplayer Ranklist" disabled="#{GameMenuController.guest}"
+                                                 action="#{GameMenuController.loadSingleplayerRank()}"/>
+                                <p:commandButton value="Multiplayer Ranklist"
+                                                 action="#{GameMenuController.loadMultiplayerRank()}"/>
+                                <h:outputText id="errorMessage" value="#{GameMenuController.errorMessage}" style="color: rgba(255,0,0,0.9)"/>
+                            </p:panelGrid>
+                        </center>
+                    </h:panelGroup>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+

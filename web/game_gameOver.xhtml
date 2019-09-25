@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+<!--        <h:form style="position: absolute; top: 0%; right: 0%;">
+                <p:commandLink action="{LoginController.logout()}">
+                    <p:graphicImage alt="Logout" value="resources/images/logout.jpg" 
+                                    style="float: right; margin-right: 30px; height: 26px; width: 40px; font-size: 14px; margin-top: 8px"/>
+                </p:commandLink>
+                <p:commandLink rendered="{LoginController.canShowHome}" action="{GameMenuController.returnToMenu()}">
+                    <p:graphicImage alt="Home" value="resources/images/home.png" 
+                                    style="float: right; opacity: 0.8; margin-right: 20px; height: 26px; width: 40px; font-size: 14px; margin-top: 8px"/>
+                </p:commandLink>
+            </h:form>
+            <br/>-->
+        <h:panelGroup class="gameover" rendered="#{GameController.isMyPage('GameOver')}">
+
+            <h:form>
+                <h:outputText value="Thanks for Playing!" style="color: #fff; opacity: 0.85; margin-bottom: 4%; font-size: 20px"/>
+                <br/>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Anagram:               " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getGamePoints(0)}" style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="Moj Broj:              " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getGamePoints(1)}" style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="Hangman:               " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getGamePoints(2)}" style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="Zanimljiva geografija: " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getGamePoints(3)}" style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="Pehar:                 " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getGamePoints(4)}" style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="Total:                " style="color: #fff; opacity: 0.85; font-size: 20px"/>
+                    <h:outputText value="#{GameController.getSum()}" style="color: rgb(13, 5, 255); opacity: 0.85; font-size: 20px"/>
+                </h:panelGrid>
+            </h:form>
+        </h:panelGroup>
+    </h:body>
+</html>
+

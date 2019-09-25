@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ETF kviskoteka</title>
+    </h:head>
+    <h:body>
+
+        <h:panelGroup class="pehar" rendered="#{GameController.isMyPage('Pehar')}">
+
+            <h:form id="peharForm" class="menuButtons">
+
+                <center>
+                    <h:outputText value="#{PeharController.getQuestion()}" rendered="#{PeharController.notFinished()}" style="color: #fff; opacity: 0.85"/>
+                    <p:inputText value="#{PeharController.answer}" autocomplete="false" rendered="#{PeharController.notFinished()}" placeholder="Answer"/>
+                </center>
+                <center>
+                    <p:commandButton class="colored06" rendered="#{PeharController.notFinished()}"
+                                     value="Submit" action="#{PeharController.submit()}"
+                                     update="peharForm timer"/>
+                    <p:commandButton class="colored06" rendered="#{PeharController.notFinished()}"
+                                     value="Skip" action="#{PeharController.skip()}"
+                                     update="peharForm timer"/>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(9)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(0)}"
+                                         value="#{PeharController.getValue(0, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(8)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(1)}"
+                                         value="#{PeharController.getValue(1, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(7)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(2)}"
+                                         value="#{PeharController.getValue(2, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(6)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(3)}"
+                                         value="#{PeharController.getValue(3, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(5)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(4)}"
+                                         value="#{PeharController.getValue(4, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(4)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(5)}"
+                                         value="#{PeharController.getValue(5, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(3)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(6)}"
+                                         value="#{PeharController.getValue(6, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(4)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(7)}"
+                                         value="#{PeharController.getValue(7, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(5)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(8)}"
+                                         value="#{PeharController.getValue(8, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(6)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(9)}"
+                                         value="#{PeharController.getValue(9, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(7)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(10)}"
+                                         value="#{PeharController.getValue(10, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(8)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(11)}"
+                                         value="#{PeharController.getValue(11, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+                <center>
+                    <ui:repeat var="letter" value="#{PeharController.makeArray(9)}" varStatus="metadata">
+                        <p:commandButton styleClass="#{PeharController.getColor(12)}"
+                                         value="#{PeharController.getValue(12, metadata.index)}"/>
+                    </ui:repeat>
+                </center>
+
+            </h:form>
+
+        </h:panelGroup>
+    </h:body>
+</html>
+
